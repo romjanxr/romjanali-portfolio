@@ -1,5 +1,6 @@
 import Navigation from "@/components/layout/Navigation";
 import AboutSection from "@/components/sections/AboutSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
 import HeroSection from "@/components/sections/HeroSection";
 
 export default function Homepage() {
@@ -8,6 +9,7 @@ export default function Homepage() {
       <Navigation />
       <HeroSection />
       <AboutSection />
+      <ExperienceSection />
     </div>
   );
 }
