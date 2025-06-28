@@ -19,7 +19,16 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      // Change this line:
+      "@/*": ["./src/*"], // <-- THIS IS THE CRUCIAL CHANGE
+      // You might also want to add more specific aliases for clarity,
+      // but "@/components/*": ["./src/components/*"] etc. will be inferred
+      // by shadcn based on "@/components" and "src/components" configuration.
+      // For now, just fix "@/":
+      "@/components/*": ["./src/components/*"],
+      "@/data/*": ["./src/data/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/styles/*": ["./src/styles/*"] // Example for styles if you have them
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
