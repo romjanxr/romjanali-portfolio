@@ -1,7 +1,9 @@
-import Navigation from "@/components/layout/Navigation";
-import AboutSection from "@/components/sections/AboutSection";
-import ExperienceSection from "@/components/sections/ExperienceSection";
-import HeroSection from "@/components/sections/HeroSection";
+import ProjectsSection from "@/components/sections/ProjectSection";
+import Navigation from "../components/layout/Navigation";
+import AboutSection from "../components/sections/AboutSection";
+import EducationSection from "../components/sections/EducationSection";
+import ExperienceSection from "../components/sections/ExperienceSection";
+import HeroSection from "../components/sections/HeroSection";
 
 export default function Homepage() {
   return (
@@ -10,6 +12,8 @@ export default function Homepage() {
       <HeroSection />
       <AboutSection />
       <ExperienceSection />
+      <EducationSection />
+      <ProjectsSection />
     </div>
   );
 }

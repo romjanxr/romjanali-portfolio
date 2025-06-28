@@ -1,6 +1,6 @@
 import Image from "next/image";
-import TechStack from "@/components/ui/TechStack";
-import SocialLinks from "@/components/ui/SocialLinks";
+import TechStack from "../ui/TechStack";
+import SocialLinks from "../ui/SocialLinks";
 
 export default function AboutSection() {
   return (
