@@ -1,6 +1,6 @@
+import { experienceData } from "@/data/experienceData";
 import { Badge } from "../ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { experienceData } from "@/src/data/experienceData";
 
 export default function ExperienceSection() {
   return (
