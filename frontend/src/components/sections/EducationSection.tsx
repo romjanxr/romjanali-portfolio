@@ -1,12 +1,12 @@
-import {
-  certificationsData,
-  educationData,
-  skillsData,
-} from "@/src/data/educationData";
 import { SectionHeader } from "../education/SectionHeader";
 import { Timeline } from "../education/TimeLine";
 import { CertificationCard } from "../education/CertificationCard";
 import { SkillBar } from "../education/SkillBar";
+import {
+  certificationsData,
+  educationData,
+  skillsData,
+} from "@/data/educationData";
 
 export default function EducationSection() {
   return (
