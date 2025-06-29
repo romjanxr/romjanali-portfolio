@@ -77,3 +77,26 @@ Initial project setup for a scalable full-stack portfolio application using Djan
 - Commit to `dev` only, avoid direct commits to `main`
 - Consider using GitHub Actions later for CI (linting/tests)
 - Will maintain this dev log daily for transparency and future documentation
+
+## 📅 2025-06-26
+
+- Decided to switch to Next.js for better routing, performance, and scalability compared to plain React.
+- Set up Next.js project using App Router (v15).
+- Integrated ShadCN UI and Radix UI for consistent and accessible UI components.
+
+## 📅 2025-06-27
+
+- Built core sections of the homepage:
+
+  - Navbar
+  - Hero Section
+  - About Me Section
+
+- Created reusable components for consistent layout and cleaner code structure.
+
+## 📅 2025-06-28
+
+- Implemented the Education and Projects sections.
+- Updated Json Data for Education Projects
+- Added animations to project images for better visual engagement.
+- Fixed various design issues across the site to improve responsiveness and consistency.
