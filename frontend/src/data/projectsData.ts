@@ -1,6 +1,7 @@
 export const projectsData = [
   {
     id: 1,
+    slug: "restmart-full-stack-e-commerce-platform",
     title: "RestMart - Full-Stack E-commerce Platform",
     description:
       "A full-stack e-commerce application with a Django REST Framework backend and a React frontend. Features include product listings, cart and order management, JWT-based authentication, and admin controls. API documented with Swagger.",
@@ -19,6 +20,7 @@ export const projectsData = [
   {
     id: 2,
     title: "Taskify - Task Management System",
+    slug: "taskify-task-management-system",
     description:
       "A collaborative task management web app built with Django and React. Users can create, assign, and categorize tasks with real-time completion tracking and notification handling using Django signals.",
     image: "/images/taskify-preview.png",
@@ -35,6 +37,7 @@ export const projectsData = [
   {
     id: 3,
     title: "Portfolio - Personal Developer Website",
+    slug: "portfolio-personal-developer-website",
     description:
       "A full-stack portfolio site built with Next.js and Django. Showcases projects, blog posts (shared to LinkedIn), and embedded YouTube tutorials. Designed for visibility and job readiness.",
     image: "/images/portfolio-preview.png",
