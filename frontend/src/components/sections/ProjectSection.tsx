@@ -86,7 +86,7 @@ export default function ProjectsSection() {
                   size="sm"
                   className="bg-[#ff1744] hover:bg-[#d50000] text-white border-0 flex-1"
                 >
-                  <Link href={`/projects/${project.id}`}>View Details</Link>
+                  <Link href={`/projects/${project.slug}`}>View Details</Link>
                 </Button>
                 <Button
                   size="sm"
