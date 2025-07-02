@@ -1,14 +1,16 @@
-import Link from "next/link";
-import { Button } from "../ui/button";
+"use client";
 
-export default function Navigation() {
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+export default function BlogNavigation() {
   return (
     <nav className="sticky top-0 z-50 bg-[#2a2a2a]/95 backdrop-blur-sm border-b border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link href="/">
-              <span className="text-xl font-bold text-white">Romjan Ali</span>
+            <Link href="/" className="text-xl font-bold text-white">
+              Romjan Ali
             </Link>
           </div>
           <div className="hidden md:block">
@@ -31,10 +33,7 @@ export default function Navigation() {
               >
                 Projects
               </Link>
-              <Link
-                href="/blog"
-                className="text-gray-300 hover:text-white transition-colors duration-200"
-              >
+              <Link href="/blog" className="text-white font-medium">
                 Blog
               </Link>
               <Link
