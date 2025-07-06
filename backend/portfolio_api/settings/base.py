@@ -1,9 +1,14 @@
+import sys
 from datetime import timedelta
 from pathlib import Path
 from decouple import config
 import cloudinary
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+# Add the 'apps' directory to the Python path
+sys.path.insert(0, str(BASE_DIR / 'apps'))
+
 
 SECRET_KEY = config(
     'SECRET_KEY', default='django-insecure-5b93df&y&7y=est6(7o!wpq6lugc@-(w657)1qg=*+bv=8j=ne')
@@ -31,10 +36,10 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'apps.users',
-    'apps.projects',
-    'apps.blog',
-    'apps.core',
+    'users',
+    'projects',
+    'blog',
+    'core',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
