@@ -14,6 +14,8 @@ class TechnologySerializer(serializers.ModelSerializer):
 
 
 class ProjectScreenshotSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField()
+
     class Meta:
         model = ProjectScreenshot
         fields = ["id", "title", "image", "description"]
@@ -114,6 +116,7 @@ class CaseStudySerializer(serializers.ModelSerializer):
 
 
 class ProjectListSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField()
     technologies = serializers.SlugRelatedField(
         many=True, read_only=True, slug_field="name")
 
@@ -126,6 +129,7 @@ class ProjectListSerializer(serializers.ModelSerializer):
 
 
 class ProjectDetailSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField()
     technologies = serializers.SlugRelatedField(
         many=True, read_only=True, slug_field="name")
     screenshots = ProjectScreenshotSerializer(many=True, read_only=True)
