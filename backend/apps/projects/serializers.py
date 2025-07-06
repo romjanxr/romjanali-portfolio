@@ -21,18 +21,15 @@ class ProjectScreenshotSerializer(serializers.ModelSerializer):
         fields = ["id", "title", "image", "description"]
 
 
-class ObjectiveGoalSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ObjectiveGoal
-        fields = ["goal"]
-
-
 class ProjectObjectiveSerializer(serializers.ModelSerializer):
-    goals = ObjectiveGoalSerializer(many=True, read_only=True)
+    goals = serializers.SerializerMethodField()
 
     class Meta:
         model = ProjectObjective
         fields = ["title", "content", "goals"]
+
+    def get_goals(self, obj):
+        return [goal.goal for goal in obj.goals.all()]
 
 
 class ProjectChallengeSerializer(serializers.ModelSerializer):
