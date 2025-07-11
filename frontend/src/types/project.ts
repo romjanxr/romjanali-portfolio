@@ -1,69 +1,77 @@
-export interface ProjectScreenshot {
+// Project Types
+
+export type Project = {
+  id: number;
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  liveUrl: string;
+  githubUrl: string;
+};
+
+// Project Details Types
+
+export type ProjectScreenshot = {
   id: number;
   title: string;
   image: string;
   description: string;
-}
+};
 
-export interface ProjectChallenge {
+export type ProjectObjective = {
+  title: string;
+  content: string;
+  goals: string[];
+};
+
+export type ProjectChallengeSolution = {
   challenge: string;
   solution: string;
-}
+};
 
-export interface ProjectTools {
+export type ProjectChallenges = {
+  title: string;
+  items: ProjectChallengeSolution[];
+};
+
+export type ProjectTools = {
   title: string;
   frontend: string[];
   backend: string[];
   deployment: string[];
   tools: string[];
-}
+};
 
-export interface ProjectMetric {
-  label: string;
-  value: string;
-  description: string;
-}
-
-export interface ProjectObjective {
+export type ProjectResults = {
   title: string;
-  content: string;
-  goals: string[];
-}
-
-export interface ProjectChallenges {
-  title: string;
-  items: ProjectChallenge[];
-}
-
-export interface ProjectResults {
-  title: string;
-  metrics: ProjectMetric[];
+  metrics?: string[];
   achievements: string[];
-}
+};
 
-export interface ProjectCaseStudy {
+export type ProjectCaseStudy = {
   objective: ProjectObjective;
   challenges: ProjectChallenges;
   tools: ProjectTools;
   features: string[];
   results: ProjectResults;
-}
+};
 
-// Update your existing Project interface
-export interface Project {
+export type ProjectDetails = {
   id: number;
   title: string;
-  subtitle?: string; // Add if not exists
+  subtitle: string;
   description: string;
   image: string;
   liveUrl: string;
   githubUrl: string;
   category: string;
-  status?: string; // Add if not exists
-  duration?: string; // Add if not exists
-  team?: string; // Add if not exists
-  completedDate?: string; // Add if not exists
+  status: string;
+  duration: string;
+  team: string;
+  completedDate: string;
   technologies: string[];
-  screenshots?: ProjectScreenshot[]; // Add if not exists
-  caseStudy?: ProjectCaseStudy; // Add if not exists
-}
+  screenshots: ProjectScreenshot[];
+  caseStudy: ProjectCaseStudy;
+};
