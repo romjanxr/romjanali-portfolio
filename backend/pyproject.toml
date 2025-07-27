@@ -21,7 +21,9 @@ dependencies = [
     "django-storages (>=1.14.6,<2.0.0)",
     "gunicorn (>=23.0.0,<24.0.0)",
     "dj-database-url (>=3.0.1,<4.0.0)",
-    "pillow (>=11.3.0,<12.0.0)"
+    "pillow (>=11.3.0,<12.0.0)",
+    "python-dotenv (>=1.1.1,<2.0.0)",
+    "cloudinary (>=1.44.1,<2.0.0)"
 ]
 
 
