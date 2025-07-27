@@ -1,32 +1,54 @@
 export const projectsData = [
   {
     id: 1,
-    title: "Cmart - Car Sale Website",
+    slug: "restmart-full-stack-e-commerce-platform",
+    title: "RestMart - Full-Stack E-commerce Platform",
     description:
-      "A full-stack single-page car sale website where users can place orders, manage orders & can read reviews.",
-    image: "/placeholder.svg?height=200&width=300",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    liveUrl: "#",
-    codeUrl: "#",
+      "A full-stack e-commerce application with a Django REST Framework backend and a React frontend. Features include product listings, cart and order management, JWT-based authentication, and admin controls. API documented with Swagger.",
+    image: "/images/restmart-preview.png",
+    technologies: [
+      "Django",
+      "DRF",
+      "React",
+      "JWT",
+      "Tailwind CSS",
+      "PostgreSQL",
+    ],
+    liveUrl: "https://restmart-client.vercel.app", // Replace with actual live URL
+    codeUrl: "https://github.com/romjanali/restmart", // Or split into client/server repos if needed
   },
   {
     id: 2,
-    title: "Turisto - Tour Booking",
+    title: "Taskify - Task Management System",
+    slug: "taskify-task-management-system",
     description:
-      "A full-stack tour booking website where users can book their desired tour packages, can pay and change order status and can delete orders.",
-    image: "/placeholder.svg?height=200&width=300",
-    technologies: ["React", "Firebase", "Node.js", "MongoDB"],
-    liveUrl: "#",
-    codeUrl: "#",
+      "A collaborative task management web app built with Django and React. Users can create, assign, and categorize tasks with real-time completion tracking and notification handling using Django signals.",
+    image: "/images/taskify-preview.png",
+    technologies: [
+      "Django",
+      "Javascript",
+      "HTML",
+      "Tailwind CSS",
+      "PostgreSQL",
+    ],
+    liveUrl: "#", // Replace with actual live URL if available
+    codeUrl: "https://github.com/romjanali/taskify",
   },
   {
     id: 3,
-    title: "DocInd - Find Doctor",
+    title: "Portfolio - Personal Developer Website",
+    slug: "portfolio-personal-developer-website",
     description:
-      "A single-page website with firebase authentication made with React.js where people can find doctors and book appointments to their desired doctor.",
-    image: "/placeholder.svg?height=200&width=300",
-    technologies: ["React", "Firebase", "Bootstrap", "CSS3"],
-    liveUrl: "#",
-    codeUrl: "#",
+      "A full-stack portfolio site built with Next.js and Django. Showcases projects, blog posts (shared to LinkedIn), and embedded YouTube tutorials. Designed for visibility and job readiness.",
+    image: "/images/portfolio-preview.png",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Django",
+      "Cloudinary",
+    ],
+    liveUrl: "https://romjanali.com",
+    codeUrl: "https://github.com/romjanali/portfolio",
   },
 ];

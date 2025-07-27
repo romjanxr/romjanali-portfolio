@@ -1,7 +1,9 @@
+"use client";
 import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -10,9 +12,29 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { projectsData } from "@/data/projectsData";
+import { useProjects } from "@/hooks/useProjects";
+import ProjectCardSkeleton from "../ui/ProjectCardSkeleton";
+import { Project } from "@/types/project";
 
 export default function ProjectsSection() {
+  const { data: projects, isLoading, error } = useProjects();
+
+  if (isLoading) {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[...Array(3)].map((_, i) => (
+          <ProjectCardSkeleton key={i} />
+        ))}
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div>Error loading projects. Please try again.</div>;
+  }
+
+  console.log(projects);
+
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -23,20 +45,38 @@ export default function ProjectsSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsData.map((project) => (
+          {projects.map((project: Project) => (
             <Card
               key={project.id}
-              className="bg-[#242424] border-gray-700 hover:border-[#ff1744]/50 transition-all duration-300 group"
+              className="
+                bg-[#242424] border-gray-700 hover:border-[#ff1744]/50
+                transition-all duration-300
+                group
+                flex flex-col h-full
+              "
             >
-              <div className="relative overflow-hidden">
+              <div
+                className="
+                  w-full h-[200px] overflow-hidden p-2
+                  relative
+                  group // This div is the group for the image hover effect
+                "
+              >
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   width={300}
-                  height={200}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  height={600}
+                  className="
+                    w-full h-auto object-cover
+                    transition-transform duration-5000 ease-in-out
+                    group-hover:[transform:translateY(-80%)]
+                    group-hover:[-webkit-transform:translateY(-80%)]
+                    will-change-transform
+                  "
                 />
               </div>
+
               <CardHeader>
                 <CardTitle className="text-white text-xl group-hover:text-[#ff1744] transition-colors">
                   {project.title}
@@ -45,7 +85,9 @@ export default function ProjectsSection() {
                   {project.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+
+              {/* CardContent now only contains the technologies and grows to fill space */}
+              <CardContent className="flex-grow">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <Badge
@@ -57,22 +99,24 @@ export default function ProjectsSection() {
                     </Badge>
                   ))}
                 </div>
-                <div className="flex gap-2">
-                  <Button
-                    size="sm"
-                    className="bg-[#ff1744] hover:bg-[#d50000] text-white border-0 flex-1"
-                  >
-                    <Link href={`/projects/${project.id}`}>View Details</Link>
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="border-gray-600 text-gray-300 hover:bg-gray-700"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                  </Button>
-                </div>
               </CardContent>
+
+              {/* CardFooter contains the buttons and will always be at the bottom */}
+              <CardFooter className="flex gap-2 p-6 pt-0">
+                <Button
+                  size="sm"
+                  className="bg-[#ff1744] hover:bg-[#d50000] text-white border-0 flex-1"
+                >
+                  <Link href={`/projects/${project.slug}`}>View Details</Link>
+                </Button>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="border-gray-600 text-gray-300 hover:bg-gray-700"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                </Button>
+              </CardFooter>
             </Card>
           ))}
         </div>

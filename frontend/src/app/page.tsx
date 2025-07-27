@@ -4,6 +4,9 @@ import AboutSection from "../components/sections/AboutSection";
 import EducationSection from "../components/sections/EducationSection";
 import ExperienceSection from "../components/sections/ExperienceSection";
 import HeroSection from "../components/sections/HeroSection";
+import BlogSection from "@/components/sections/BlogSection";
+import ContactSection from "@/components/sections/ContactSection";
+import Footer from "@/components/layout/Footer";
 
 export default function Homepage() {
   return (
@@ -14,6 +17,9 @@ export default function Homepage() {
       <ExperienceSection />
       <EducationSection />
       <ProjectsSection />
+      <BlogSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 }

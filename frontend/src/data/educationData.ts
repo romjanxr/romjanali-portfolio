@@ -9,7 +9,7 @@ export const educationData: Education[] = [
     institution: "Green University of Bangladesh",
     location: "Dhaka, Bangladesh",
     period: "2022 - 2026",
-    gpa: "3.8/4.0",
+    gpa: "3.52/4.00",
     icon: "🎓",
     iconColor: "from-[#ff1744] to-[#d50000]",
     description:
@@ -73,10 +73,13 @@ export const certificationsData: Certification[] = [
 ];
 
 export const skillsData: Skill[] = [
-  { skill: "JavaScript", level: 90, icon: "🟨" },
-  { skill: "React.js", level: 85, icon: "⚛️" },
-  { skill: "Node.js", level: 80, icon: "🟢" },
-  { skill: "MongoDB", level: 75, icon: "🍃" },
-  { skill: "HTML/CSS", level: 95, icon: "🎨" },
-  { skill: "TypeScript", level: 70, icon: "🔷" },
+  { skill: "Python", level: 95, icon: "🐍" },
+  { skill: "Django", level: 90, icon: "🌿" },
+  { skill: "Django REST Framework", level: 85, icon: "🔗" },
+  { skill: "TypeScript", level: 85, icon: "🔷" },
+  { skill: "React.js", level: 70, icon: "⚛️" },
+  { skill: "Next.js", level: 65, icon: "⏭️" },
+  { skill: "Git & GitHub", level: 90, icon: "🔧" },
+  { skill: "PostgreSQL", level: 80, icon: "🐘" },
+  { skill: "Linux", level: 85, icon: "🖥️" },
 ];

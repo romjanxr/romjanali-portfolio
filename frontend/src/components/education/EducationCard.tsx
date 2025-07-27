@@ -1,5 +1,5 @@
-import { Badge } from "lucide-react";
 import { Education } from "../../types/education";
+import { Badge } from "../ui/badge";
 
 interface EducationCardProps {
   education: Education;
@@ -37,7 +37,8 @@ export const EducationCard = ({ education }: EducationCardProps) => {
                   : "bg-blue-500 text-white"
               }
             >
-              GPA: {education.gpa}
+              {education.iconColor.includes("ff1744") ? "CGPA" : "GPA"}:{" "}
+              {education.gpa}
             </Badge>
           )}
         </div>

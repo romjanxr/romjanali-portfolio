@@ -23,6 +23,7 @@ export default function SocialLinks() {
         <Link
           key={label}
           href={href}
+          target="blank"
           className="p-3 border border-gray-600 rounded-full hover:border-[#ff1744] hover:text-[#ff1744] transition-colors"
           aria-label={label}
         >
