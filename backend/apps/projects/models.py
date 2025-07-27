@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils.text import slugify
-from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -17,7 +16,7 @@ class Project(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200)
     description = models.TextField()
-    image = CloudinaryField('image')
+    image = models.ImageField(upload_to="projects/")
     live_url = models.URLField(blank=True, null=True)
     github_url = models.URLField(blank=True, null=True)
     category = models.CharField(max_length=100)
@@ -41,7 +40,7 @@ class ProjectScreenshot(models.Model):
     project = models.ForeignKey(
         Project, on_delete=models.CASCADE, related_name="screenshots")
     title = models.CharField(max_length=200)
-    image = CloudinaryField('image')
+    image = models.ImageField(upload_to="project_screenshots/")
     description = models.TextField()
 
 
