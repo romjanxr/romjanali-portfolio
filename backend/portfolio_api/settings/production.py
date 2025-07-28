@@ -49,10 +49,9 @@ MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
 # --- CORS ---
 # Define which frontend domains are allowed to connect
-CORS_ALLOWED_ORIGINS = [
-    "https://romjanali.com",
-    "https://www.romjanali.com",
-]
+cors_origins = config("CORS_ALLOWED_ORIGINS", "")
+CORS_ALLOWED_ORIGINS = [origin.strip()
+                        for origin in cors_origins.split(",") if origin.strip()]
 CORS_ALLOW_CREDENTIALS = True
 
 
