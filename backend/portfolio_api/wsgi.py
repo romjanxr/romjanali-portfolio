@@ -13,6 +13,6 @@ from django.core.wsgi import get_wsgi_application
 
 load_dotenv()
 os.environ.setdefault("DJANGO_SETTINGS_MODULE",
-                      "portfolio_api.settings.development")
+                      "portfolio_api.settings.production")
 
 application = get_wsgi_application()
