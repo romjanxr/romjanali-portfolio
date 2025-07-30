@@ -1,13 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import redirect
 
 # Create your views here.
 
 from django.http import JsonResponse
 
 
-def root_api_view(request):
-    return JsonResponse({
-        "message": "Welcome to the RomjanAli API",
-        "version": "v1",
-        "documentation": "https://api.romjanali.dev/docs/"
-    })
+def redirect_to_docs(request):
+    return redirect("/docs/")
