@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from storages.backends.s3boto3 import S3Boto3Storage
 
 # Create your models here.
 
@@ -16,7 +17,7 @@ class Project(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200)
     description = models.TextField()
-    image = models.ImageField(upload_to="projects/")
+    image = models.ImageField(upload_to="projects/", storage=S3Boto3Storage())
     live_url = models.URLField(blank=True, null=True)
     github_url = models.URLField(blank=True, null=True)
     category = models.CharField(max_length=100)
@@ -40,7 +41,8 @@ class ProjectScreenshot(models.Model):
     project = models.ForeignKey(
         Project, on_delete=models.CASCADE, related_name="screenshots")
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="project_screenshots/")
+    image = models.ImageField(
+        upload_to="project_screenshots/", storage=S3Boto3Storage())
     description = models.TextField()
 
 
